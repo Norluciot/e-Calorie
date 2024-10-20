@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
+import { FaUser, FaWeight, FaRulerVertical, FaVenusMars, FaRunning } from 'react-icons/fa';
 
 interface FormProps {
   onCalculate: (age: number, weight: number, height: number, gender: string, activityLevel: string) => void;
@@ -41,49 +42,53 @@ const Form: React.FC<FormProps> = ({ onCalculate }) => {
   return (
     <motion.form
       onSubmit={handleSubmit}
-      className="bg-white shadow-md rounded-lg p-6 space-y-4"
+      className="bg-white  rounded-lg p-6 space-y-4"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <div className="grid gap-4">
-        <div>
+        <div className="relative">
+          <FaUser className="absolute top-3 left-3 text-gray-400" />
           <input
             type="number"
             placeholder="Âge *"
             value={age}
             onChange={(e) => setAge(e.target.value)}
-            className={`w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.age ? 'border-red-500' : ''}`}
+            className={`w-full p-3 pl-10 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.age ? 'border-red-500' : ''}`}
           />
           {errors.age && <p className="text-red-500 text-sm mt-1">{errors.age}</p>}
         </div>
-        <div>
+        <div className="relative">
+          <FaWeight className="absolute top-3 left-3 text-gray-400" />
           <input
             type="number"
             step="0.1"
             placeholder="Poids (kg) *"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
-            className={`w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.weight ? 'border-red-500' : ''}`}
+            className={`w-full p-3 pl-10 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.weight ? 'border-red-500' : ''}`}
           />
           {errors.weight && <p className="text-red-500 text-sm mt-1">{errors.weight}</p>}
         </div>
-        <div>
+        <div className="relative">
+          <FaRulerVertical className="absolute top-3 left-3 text-gray-400" />
           <input
             type="number"
             step="0.1"
             placeholder="Taille (cm) *"
             value={height}
             onChange={(e) => setHeight(e.target.value)}
-            className={`w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.height ? 'border-red-500' : ''}`}
+            className={`w-full p-3 pl-10 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.height ? 'border-red-500' : ''}`}
           />
           {errors.height && <p className="text-red-500 text-sm mt-1">{errors.height}</p>}
         </div>
-        <div>
+        <div className="relative">
+          <FaVenusMars className="absolute top-3 left-3 text-gray-400" />
           <select
             value={gender}
             onChange={(e) => setGender(e.target.value)}
-            className={`w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.gender ? 'border-red-500' : ''}`}
+            className={`w-full p-3 pl-10 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.gender ? 'border-red-500' : ''}`}
           >
             <option value="">Genre *</option>
             <option value="male">Homme</option>
@@ -91,11 +96,12 @@ const Form: React.FC<FormProps> = ({ onCalculate }) => {
           </select>
           {errors.gender && <p className="text-red-500 text-sm mt-1">{errors.gender}</p>}
         </div>
-        <div>
+        <div className="relative">
+          <FaRunning className="absolute top-3 left-3 text-gray-400" />
           <select
             value={activityLevel}
             onChange={(e) => setActivityLevel(e.target.value)}
-            className={`w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.activityLevel ? 'border-red-500' : ''}`}
+            className={`w-full p-3 pl-10 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.activityLevel ? 'border-red-500' : ''}`}
           >
             <option value="">Niveau d'activité *</option>
             {Object.entries(activityLevelExplanations).map(([value, explanation]) => (

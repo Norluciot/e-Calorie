@@ -1,5 +1,7 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import React, { useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 import Form from '../components/Form';
 import ResultModal from '../components/ResultModal';
@@ -22,7 +24,7 @@ const CalculatePage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
+    <div className="max-w-3xl mx-auto bg-white rounded-lg p-8">
       <motion.h1
         className="text-4xl font-bold text-center text-teal-700 mb-8"
         initial={{ y: -50, opacity: 0 }}
@@ -33,6 +35,22 @@ const CalculatePage: React.FC = () => {
       </motion.h1>
       <Form onCalculate={handleCalculate} />
       <ResultModal isOpen={isModalOpen} onClose={closeModal} calories={calories} />
+      <AnimatePresence>
+        {!isModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="mt-4"
+          >
+            <Link to="/" className="text-teal-600 hover:text-teal-800 flex items-center">
+              <FaArrowLeft className="mr-2" />
+              Retour à l'accueil
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
