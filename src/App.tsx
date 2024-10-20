@@ -32,7 +32,7 @@ const App: React.FC = () => {
               </Routes>
             </main>
             <footer className="bg-gray-100 py-4 px-6 text-center text-gray-600 text-sm">
-              © 2024 e-Calories. Tous droits réservés.
+              © 2024 e-Calories by Norluciot.
             </footer>
           </motion.div>
         </div>
