@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
       >
         <Link
           to="/calculate"
-          className="block w-full text-center bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-4 rounded transition duration-300 flex items-center justify-center"
+          className="w-full text-center bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-4 rounded transition duration-300 flex items-center justify-center"
         >
           <FaCalculator className="mr-2" />
           Calculer votre métabolisme de base

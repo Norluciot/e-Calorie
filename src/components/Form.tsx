@@ -16,25 +16,27 @@ const Form: React.FC<FormProps> = ({ onCalculate }) => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [showConfetti, setShowConfetti] = useState(false);
 
-  const validateForm = () => {
-    const newErrors: { [key: string]: string } = {};
-    if (!age) newErrors.age = "L'âge est requis";
-    if (!weight) newErrors.weight = "Le poids est requis";
-    if (!height) newErrors.height = "La taille est requise";
-    if (!gender) newErrors.gender = "Le genre est requis";
-    if (!activityLevel) newErrors.activityLevel = "Le niveau d'activité est requis";
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
   const handleSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
+
+    // Déplacez validateForm dans le hook useCallback
+    const validateForm = () => {
+      const newErrors: { [key: string]: string } = {};
+      if (!age) newErrors.age = "L'âge est requis";
+      if (!weight) newErrors.weight = "Le poids est requis";
+      if (!height) newErrors.height = "La taille est requise";
+      if (!gender) newErrors.gender = "Le genre est requis";
+      if (!activityLevel) newErrors.activityLevel = "Le niveau d'activité est requis";
+      setErrors(newErrors);
+      return Object.keys(newErrors).length === 0;
+    };
+
     if (validateForm()) {
       onCalculate(parseInt(age), parseFloat(weight), parseFloat(height), gender, activityLevel);
       setShowConfetti(true);
       setTimeout(() => setShowConfetti(false), 5000); // Stop confetti after 5 seconds
     }
-  }, [age, weight, height, gender, activityLevel, onCalculate, validateForm]);
+  }, [age, weight, height, gender, activityLevel, onCalculate]); // Vous n'avez plus besoin d'ajouter validateForm dans les dépendances
 
   const activityLevelExplanations = {
     sedentary: "Peu ou pas d'exercice",
