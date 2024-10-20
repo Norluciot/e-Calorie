@@ -92,7 +92,7 @@ const Form: React.FC<FormProps> = ({ onCalculate }) => {
             {errors.height && <p className="text-red-500 text-sm mt-1">{errors.height}</p>}
           </div>
           <div className="relative">
-            <FaVenusMars className="absolute top-3 left-3 text-gray-400" />
+            <FaVenusMars className="absolute top-1/2 transform -translate-y-1/2 left-3 text-gray-400 text-sm" />
             <select
               value={gender}
               onChange={(e) => setGender(e.target.value)}
@@ -105,7 +105,7 @@ const Form: React.FC<FormProps> = ({ onCalculate }) => {
             {errors.gender && <p className="text-red-500 text-sm mt-1">{errors.gender}</p>}
           </div>
           <div className="relative">
-            <FaRunning className="absolute top-3 left-3 text-gray-400" />
+            <FaRunning className="absolute top-1/2 transform -translate-y-1/2 left-3 text-gray-400 text-sm" />
             <select
               value={activityLevel}
               onChange={(e) => setActivityLevel(e.target.value)}

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import React, { useState } from 'react';
 import Modal from './Modal';
 import Suggestions from './Suggestions';
 
@@ -18,7 +18,7 @@ const ResultModal: React.FC<ResultModalProps> = ({ isOpen, onClose, calories }) 
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className="p-6">
+      <div className="p-6 max-h-[80vh] overflow-y-auto">
         <motion.h2
           className="text-2xl font-semibold mb-4 text-center text-green-600"
           initial={{ opacity: 0, y: -20 }}

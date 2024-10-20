@@ -21,10 +21,9 @@ const Suggestions: React.FC<SuggestionsProps> = ({ goal }) => {
       { text: "Mangez fréquemment pour maintenir un apport énergétique continu.", icon: <FaAppleAlt /> }
     ]
   };
-
   return (
     <motion.div
-      className="mt-4 p-4 bg-yellow-100 shadow-lg rounded-lg max-w-full sm:max-w-lg mx-auto"
+      className="mt-4 p-4 bg-yellow-100 shadow-lg rounded-lg max-w-full sm:max-w-lg mx-auto max-h-[60vh] overflow-y-auto"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
