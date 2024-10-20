@@ -22,11 +22,19 @@ const Form: React.FC<FormProps> = ({ onCalculate }) => {
     // Déplacez validateForm dans le hook useCallback
     const validateForm = () => {
       const newErrors: { [key: string]: string } = {};
+
       if (!age) newErrors.age = "L'âge est requis";
+      else if (parseInt(age) <= 0 || parseInt(age) > 120) newErrors.age = "Veuillez entrer un âge valide entre 1 et 120 ans";
+
       if (!weight) newErrors.weight = "Le poids est requis";
+      else if (parseFloat(weight) <= 0 || parseFloat(weight) > 500) newErrors.weight = "Veuillez entrer un poids valide entre 0 et 500 kg";
+
       if (!height) newErrors.height = "La taille est requise";
+      else if (parseFloat(height) <= 0 || parseFloat(height) > 300) newErrors.height = "Veuillez entrer une taille valide entre 0 et 300 cm";
+
       if (!gender) newErrors.gender = "Le genre est requis";
       if (!activityLevel) newErrors.activityLevel = "Le niveau d'activité est requis";
+
       setErrors(newErrors);
       return Object.keys(newErrors).length === 0;
     };
