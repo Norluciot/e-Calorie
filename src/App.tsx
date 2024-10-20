@@ -1,8 +1,8 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import HomePage from './pages/HomePage';
+import React from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import CalculatePage from './pages/CalculatePage';
+import HomePage from './pages/HomePage';
 
 const App: React.FC = () => {
   return (

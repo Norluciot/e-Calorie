@@ -42,7 +42,7 @@ const Form: React.FC<FormProps> = ({ onCalculate }) => {
   return (
     <motion.form
       onSubmit={handleSubmit}
-      className="bg-white  rounded-lg p-6 space-y-4"
+      className="bg-white rounded-lg p-6 space-y-4 mx-auto max-w-md sm:max-w-lg"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
