@@ -46,7 +46,6 @@ const Form: React.FC<FormProps> = ({ onCalculate }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="text-2xl font-semibold text-center text-blue-600">Calculateur de Métabolisme de Base</h2>
       <div className="grid gap-4">
         <div>
           <input
