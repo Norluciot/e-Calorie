@@ -24,7 +24,7 @@ const Suggestions: React.FC<SuggestionsProps> = ({ goal }) => {
 
   return (
     <motion.div
-      className="mt-4 p-4 bg-yellow-100 rounded-lg max-w-full sm:max-w-lg mx-auto"
+      className="mt-4 p-4 bg-yellow-100 shadow-lg rounded-lg max-w-full sm:max-w-lg mx-auto"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

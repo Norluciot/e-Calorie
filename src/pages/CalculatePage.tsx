@@ -24,7 +24,7 @@ const CalculatePage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto bg-white rounded-lg p-4">
+    <div className="max-w-3xl mx-auto bg-white rounded-lg p-8">
       <motion.h1
         className="text-2xl font-bold text-center text-teal-700 mb-8"
         initial={{ y: -50, opacity: 0 }}
