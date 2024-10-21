@@ -19,7 +19,6 @@ const Form: React.FC<FormProps> = ({ onCalculate }) => {
   const handleSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
 
-    // Déplacez validateForm dans le hook useCallback
     const validateForm = () => {
       const newErrors: { [key: string]: string } = {};
 
@@ -44,7 +43,7 @@ const Form: React.FC<FormProps> = ({ onCalculate }) => {
       setShowConfetti(true);
       setTimeout(() => setShowConfetti(false), 5000); // Stop confetti after 5 seconds
     }
-  }, [age, weight, height, gender, activityLevel, onCalculate]); // Vous n'avez plus besoin d'ajouter validateForm dans les dépendances
+  }, [age, weight, height, gender, activityLevel, onCalculate]);
 
   const activityLevelExplanations = {
     sedentary: "Peu ou pas d'exercice",
